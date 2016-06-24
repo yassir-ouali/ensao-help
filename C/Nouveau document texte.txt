@@ -1,0 +1,13 @@
+<?php 
+
+function file_name($path){
+$file=strrchr($path,"/");
+if(strlen($file)<16){
+return substr($file,1);
+}else{
+$d=substr($file,1,6);
+$f=substr($file,strlen($file)-6,strlen($file));
+return $d."...".$f;
+}
+}
+?>

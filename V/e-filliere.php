@@ -1,0 +1,19 @@
+<?php 
+$type=$dSession['etat']['secondaire'];
+if($type=='connect'){
+	$dReponse['header']=$dConfig['vues']['headerConnect']['url'];
+	$dReponse['membre']=$dSession['membre'];
+}else{
+	$dReponse['header']=$dConfig['vues']['headerInit']['url'];
+}
+
+$dReponse['modelvues']="filliere";
+$dReponse['onglets']=$dConfig['vues']['onglets']['url'];
+$dReponse['tableau']=$dConfig['vues']['tableau']['url'];
+$dReponse['footer']=$dConfig['vues']['footer']['url'];
+$dReponse['form']=$dConfig['vues']['formulaireAjouterFichier']['url'];
+$dReponse['assets']=$dConfig['assets']['url'];
+$dReponse['ajaxFunctions']=$dConfig['scripts']['onglets'];
+$dReponse['filliere']=$_GET['choice'];
+finSession($dConfig,$dReponse,$dSession);
+?>
